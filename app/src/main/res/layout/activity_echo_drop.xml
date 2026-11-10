@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D0D0D">
+
+    <!-- Main In-Game UI -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Clean Top Header Row (ONLY Menu, Title, New) -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnBack"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#1E1E1E"
+                android:text="← Menu"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Echo Drop"
+                android:textColor="#FFC107"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnRestart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#1E1E1E"
+                android:text="↺ New"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Scores & Next Tile Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="6dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- P1 Score -->
+            <TextView
+                android:id="@+id/tvP1Score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#1E1E1E"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:text="🔴 P1: 0"
+                android:textColor="#FF1744"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <!-- Next Tile Preview -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="12dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NEXT"
+                    android:textColor="#AAAAAA"
+                    android:textSize="10sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvNextTile"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:background="#FFC107"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="#000000"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- P2 Score -->
+            <TextView
+                android:id="@+id/tvP2Score"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="#1E1E1E"
+                android:gravity="center"
+                android:paddingVertical="8dp"
+                android:text="🔵 P2: 0"
+                android:textColor="#00E5FF"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- Turn Banner -->
+        <TextView
+            android:id="@+id/tvTurnStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:background="#1E1E1E"
+            android:gravity="center"
+            android:paddingVertical="6dp"
+            android:text="P1's Turn (Drop Tile)"
+            android:textColor="#FF1744"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <!-- Column Drop Buttons Row (5 Columns) -->
+        <LinearLayout
+            android:id="@+id/layoutDropButtons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDrop0"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2A2A2A"
+                android:padding="0dp"
+                android:text="▼"
+                android:textColor="#FFC107"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDrop1"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2A2A2A"
+                android:padding="0dp"
+                android:text="▼"
+                android:textColor="#FFC107"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDrop2"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2A2A2A"
+                android:padding="0dp"
+                android:text="▼"
+                android:textColor="#FFC107"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDrop3"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2A2A2A"
+                android:padding="0dp"
+                android:text="▼"
+                android:textColor="#FFC107"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnDrop4"
+                android:layout_width="0dp"
+                android:layout_height="36dp"
+                android:layout_margin="1dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2A2A2A"
+                android:padding="0dp"
+                android:text="▼"
+                android:textColor="#FFC107"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- 5x7 Board Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#151515"
+            android:padding="4dp">
+
+            <GridLayout
+                android:id="@+id/gridBoard"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnCount="5"
+                android:rowCount="7" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <!-- Pre-Game Setup Overlay Screen -->
+    <LinearLayout
+        android:id="@+id/layoutSetup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="20dp"
+        android:background="#1E1E1E"
+        android:elevation="12dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Echo Drop"
+            android:textColor="#FFC107"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="8dp"
+            android:text="Select Game Mode:"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModePassPlay"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="2dp"
+            android:backgroundTint="#FFC107"
+            android:text="👥 2-Player Pass &amp; Play"
+            android:textColor="#000000"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModeEasyAI"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="2dp"
+            android:backgroundTint="#2A2A2A"
+            android:text="🤖 Easy AI (Zero Memory)"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModeMediumAI"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="2dp"
+            android:backgroundTint="#2A2A2A"
+            android:text="🤖 Medium AI (Top-Tile Memory)"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnModeHardAI"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginVertical="2dp"
+            android:backgroundTint="#2A2A2A"
+            android:text="🤖 Hard AI (Perfect Memory)"
+            android:textColor="#FFFFFF"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+
+        <!-- Hint & Rules Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="#151515"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="💡 HINTS &amp; RULES:"
+                android:textColor="#FFC107"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="• Drop tiles into 5 columns to match equal values and merge them.\n• Points from merges go to the current player's score!\n• Tiles hide 1.5s after dropping—remember hidden numbers to trigger huge combos!"
+                android:textColor="#CCCCCC"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnSetupBack"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginEnd="8dp"
+                android:layout_weight="1"
+                android:backgroundTint="#2A2A2A"
+                android:text="← Menu"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/btnStartGame"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="2"
+                android:backgroundTint="#FFC107"
+                android:text="▶ START GAME"
+                android:textColor="#000000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>
